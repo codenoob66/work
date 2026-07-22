@@ -1,4 +1,4 @@
-# AGENT.md
+# CLAUDE.md
 
 ## Purpose
 

@@ -23,7 +23,27 @@
   2. If the customer has multiple domains, they may simply be looking at the wrong domain in the control panel.
   3. Guide the customer to the domain selection dropdown at the top of the one.com control panel to select their active one.com domain.
 
-### 3. Domain Owner Change Verification (Company to Company)
+### 3. Two Types of Email/Ownership at one.com
+- **Registered Email (Subscription/Account Level):**
+  - This is the email associated with the one.com subscription or account.
+  - It is used for logging into the control panel, receiving invoices, and managing one.com services.
+  - Can be updated by the customer directly via **My account > Account settings** in the control panel.
+  - Changes apply to all domains under that subscription (or specific ones if linked to multiple accounts).
+
+- **Registrant Email (Domain/Registry Level):**
+  - This is the email registered with the domain registry (e.g., ICANN for `.com`, Punktum.dk for `.dk`, Nominet for `.co.uk`).
+  - It is used for domain ownership verification, transfer authorization (Auth-ID delivery), and registry-mandated communications.
+  - Cannot be updated by the customer directly — requires the **Change Email Form** (PDF) with photo ID to be sent to `support@one.com`.
+  - Updating this email in the one.com system does NOT update the subscription/account email, and vice versa.
+
+- **Key Distinction:**
+  - Both emails can be the same, but they can also be completely different.
+  - A common source of confusion: customers update their contact email in the control panel (subscription level) and assume the registrant email is also updated — it is not.
+  - When a customer receives a registry notice about an outdated email, the issue is almost always the **registrant email**, not the subscription email.
+  - The registrant email is also where the **Auth-ID** (domain transfer authorization code) is sent when a customer requests to transfer a domain out. If the registrant email is outdated, the customer will not receive the Auth-ID.
+  - To check the registrant email: guide the customer to the domain details page in the control panel or use the handover/transfer link `https://www.one.com/admin/handover.do`.
+
+### 4. Domain Owner Change Verification (Company to Company)
 - **Scenario:** A customer requests an Owner Change for a company-registered domain.
 - **Key Rules & Verification Requirements:**
   - To process an owner change for a company, support must request:
@@ -31,7 +51,7 @@
     2. An official company document (e.g., company stamp, letterhead, registry excerpt, or UBO excerpt) confirming the authorized representative.
   - Verify that the documents are valid and that the contact details match the current registration before forwarding to the hostmasters/domain department for final processing.
 
-### 4. Domain Transfer Failure due to Failed Payment
+### 5. Domain Transfer Failure due to Failed Payment
 - **Scenario:** A customer is trying to transfer a domain (e.g., from Punktum.dk) to one.com, but the transfer is not proceeding, even if they have an authorization key (transfer key/Auth-ID).
 - **Key Rules & Requirements:**
   - **Check Order Logs:** Check the order logs to verify if an order attempt was made and if the payment succeeded.
@@ -41,7 +61,7 @@
     2. Guide them to submit a new transfer order by going to the homepage, searching for the domain, choosing the transfer option, and completing the payment checkout.
     3. Remind them to enter their authorization code (Auth-ID/transfer key) during or after the checkout to initiate the transfer.
 
-### 5. Domain Order Reactivation (After Refund or Cancellation Request)
+### 6. Domain Order Reactivation (After Refund or Cancellation Request)
 - **Scenario:** A customer previously initiated a domain transfer but then requested a cancellation or refund. The transfer order was deleted/cancelled, and hostmasters initially declined reactivation.
 - **Key Rules & Requirements:**
   - **Written Consent Requirement:** To reactivate a domain/hosting order that has been cancelled or deleted, the registered contact must send a written request (email) to `support@one.com` stating: "Please proceed with the reactivation for my domain [domain name]".
@@ -51,7 +71,7 @@
   2. Ask the customer to send an email from their registered contact address to `support@one.com` requesting reactivation.
   3. Once received and merged, proceed with order reactivation and resume the transfer.
 
-### 6. Registry/ICANN Domain Suspension & Registrant Email Change
+### 7. Registry/ICANN Domain Suspension & Registrant Email Change
 - **Scenario:** A domain (especially a `.com` domain) is suspended by the registry due to pending ownership verification, and the customer cannot receive the verification email because the registered email address is outdated or inaccessible.
 - **Key Rules & Requirements:**
   - **Suspension Cause:** ICANN/registry requires periodic contact detail verification. If unanswered, the domain is suspended, causing all services (website and email) to stop working.
@@ -65,7 +85,7 @@
     2. Once updated, a new verification email will be automatically sent by the registry to the new email address.
     3. Instruct the customer to click the verification link in that email to lift the suspension, after which services will resume within a few hours.
 
-### 7. Domain Subscription Cancellation & Termination
+### 8. Domain Subscription Cancellation & Termination
 - **Scenario:** A customer wishes to cancel their domain subscription to stop auto-renewal, or they want to terminate the service and delete all associated data immediately.
 - **Key Distinction:**
   - **Cancellation:** Stops future automatic renewals. The subscription remains active until the end of the current paid period. Data is not immediately deleted.
@@ -88,7 +108,7 @@
   3. Clearly state that this action will permanently delete all files, emails, and databases associated with the domain and cannot be undone.
   4. **Alternative for confirmation:** If the customer prefers, they can send the following statement in their email along with the signed form and ID: `"I confirm I understand and accept that all data for [domain name] at one.com will be deleted and the subscription terminated; please proceed with termination and account removal."`
 
-### 8. Subscription Owner vs. Domain Owner (Registrant)
+### 9. Subscription Owner vs. Domain Owner (Registrant)
 - **Concept & Distinction:** 
   - **Subscription Owner:** The person or entity responsible for the financial and administrative aspects of the hosting account. They pay the subscription fees and invoices, own all files and emails hosted on the web space, and their contact email acts as the username for logging into the one.com Control Panel.
   - **Domain Owner (Registrant):** The legal owner of the domain name itself. They have the sole authority to approve major domain actions, such as transferring the domain to another registrar, changing nameservers, or changing registrant details. Their information is published in WHOIS/RDAP.
@@ -96,7 +116,7 @@
   - In most cases, these are the same, but they can differ (e.g., a web designer managing hosting for a client who owns the domain).
   - Updating the subscription contact email **does not** automatically update the domain owner's email address. They are handled separately in the Control Panel.
 
-### 9. Changing Contact Email Address in the Control Panel
+### 10. Changing Contact Email Address in the Control Panel
 - **Standard Procedure:**
   1. Log in to the [one.com Control Panel](https://login.one.com).
   2. Click **My account** in the top-right corner and select **Account settings**.
@@ -108,7 +128,7 @@
   - If domain and subscription have different owners, an **update key** is sent to the *current* registered email address to authorize the change.
   - If the customer lacks access to the current email, they must use the physical **Change Email form**.
 
-### 10. Changing Domain Owner's Contact Details
+### 11. Changing Domain Owner's Contact Details
 - **Standard Procedure:**
   1. Log in to the one.com Control Panel.
   2. Go to **My account** > **My products** in the top-right menu.
@@ -119,7 +139,7 @@
   - **Different details:** If subscription and domain details differ, you must click **Request update key** which sends a code to the current domain email. Copy and paste this key into the Control Panel to verify the change.
   - **Inaccessible Email:** If the domain email cannot be accessed, the physical **Domain Owner Form** must be downloaded, signed, and sent with a copy of a valid ID to support.
 
-### 11. Changing Owner of Web Space and Domain (Ownership Change)
+### 12. Changing Owner of Web Space and Domain (Ownership Change)
 - **Standard Procedure (Control Panel):**
   1. **Initiate (Current Owner):** Log in to the Control Panel, go to **My account** > **My products**, and click **Manage** next to the domain.
   2. Select **Change domain owner** (or Change owner of web space, or both) from the menu.
@@ -131,7 +151,7 @@
   - **Fees:** There is usually a fee associated with changing the owner of a web space or domain.
   - **Inaccessible current account:** If the current owner cannot log in or access their email, they must fill out and sign the physical **Domain Owner Form** and send it to support with a copy of their ID.
 
-### 12. Regaining Access & Changing Contact Details when Unable to Log In
+### 13. Regaining Access & Changing Contact Details when Unable to Log In
 - **Scenario:** A customer cannot log in to their Control Panel and needs to update their contact details to regain access.
 - **Key Policies & Procedures:**
   - **Forgotten Password (Access to email active):**
@@ -329,4 +349,32 @@ See the price list or calculator on one.com.
 - **Customer Email:** lita_elso@hotmail.com
 - **Domain:** helsefysio.no
 - **Context:** Customer’s main site was at `www.helsefysio.no` (CNAME to Leadpages) and a landing page lived at path `/bok1` (`www.helsefysio.no/bok1`). Visitors typing `helsefysio.no/bok1` (no www) landed on the homepage because an apex **Web forward** discards the path and only sends users to the target root. Support guided replacing the Web forward with a **Web alias** (empty Hostname → `https://www.helsefysio.no/`) so paths are preserved, and reassured that this only affects bare-domain traffic — the www CNAME/site stays untouched. Customer deleted the Web forward and created the alias correctly; apex `helsefysio.no` then worked, but `/bok1` still dropped to the homepage shortly after change (propagation/cache still in play; follow-up needed). Key lessons: (1) Subfolder paths like `/bok1` are not subdomains — do not treat them as DNS hostnames. (2) Static Web forward often strips paths; Web alias is the usual path-preserving fix for apex → www. (3) Reassure carefully when customers fear “breaking” www — explain www vs bare domain and that only the existing apex redirect is updated. (4) After the change, allow propagation (advised up to ~90 minutes, sometimes longer) and test in a private window; if apex works but a specific path still fails, re-verify alias/forward records, confirm `www.../path` works on the external host (e.g. Leadpages), then consider a true subdomain (e.g. `bok1.helsefysio.no`) if the landing-page platform supports it.
+
+### Case Study 18: Registry Domain Suspension Due to Outdated Registrant Email (Multi-Domain Account)
+- **Ticket Reference:** Takeaway 32
+- **Customer Name:** Mustafa
+- **Customer Email:** onlineboekhoudingzzp@gmail.com
+- **Domain:** dimudivloeren.nl (and potentially ~15 other domains on the account)
+- **Context:** Customer contacted support after receiving a registry notice that `dimudivloeren.nl` would be suspended on 19-7-2026 due to an unverified registrant email (`k.t*****@******com`). The customer no longer has access to that email — it was closed approximately 6 years ago. The customer’s current contact email (`onlineboekhoudingzzp@gmail.com`) was already updated in the one.com control panel, but the registrant email with the registry remained outdated. Customer was managing ~59 domains and estimated ~15 might have the same issue. Customer was on vacation and unable to process the form immediately, requesting an extension. Support explained the suspension is mandated by the registry (not one.com) and provided the Change Email form (PDF) with instructions to select “Domain only,” sign it, attach a valid photo ID, and send to support@one.com. Support offered to keep the ticket open and work via email. Key lessons: (1) Updating the contact email in the one.com control panel does NOT update the registrant email with the registry — these are separate records. (2) When a customer has many domains, check if multiple domains share the same outdated registrant email — the same form can cover multiple domains. (3) For customers who are on vacation or unable to act immediately, offer to keep the ticket open and communicate via email so they can respond at their convenience. (4) Clarify that registry suspension is different from domain expiry — suspended domains can be restored once verification is completed, while expired domains follow a different reclaim process.
+
+### Case Study 19: Order Deletion Blocked by Registered Contact Mismatch (Shared with Billing)
+- **Ticket Reference:** Takeaway 33 (Shared with Billing)
+- **Customer Name:** Kanon
+- **Customer Email:** kanon210.com@gmail.com
+- **Domain:** ascanva.com
+- **Context:** Customer contacted support about a pending domain order for ascanva.com. The order was under review (standard process, up to 24 hours). Customer became impatient and requested a refund. Support initially agreed to delete the order and process the refund, but upon attempting discovered the customer’s name was not the registered contact on the account. Deletion and refund could not proceed without the registered account holder’s authorization. Resolution: advised the customer to wait 24 hours; if still not active, follow up. For refund, the registered account holder must contact support directly. Key lesson: Before promising order deletions or refunds, verify that the contacting person is the registered account holder.
+
+### Case Study 20: .UK Domain Ownership Change Must Go Through Nominet
+- **Ticket Reference:** Takeaway 34
+- **Customer Name:** Belal
+- **Customer Email:** belal@zems.org.uk
+- **Domain:** zems.org.uk
+- **Context:** Customer (Head of IT at Zems Academy Group) contacted support wanting to change the domain registrant/owner from Zeeshan Mirza to Abid Ali for zems.org.uk. The domain was attached to a Guru plan, which prevented ownership changes in the control panel. Support temporarily detached the domain to allow changes, but this did not resolve the issue since the underlying problem was TLD-specific. A Change Domain Ownership form was submitted (initially with both webspace and domain options, later amended to "domain only"), but the domain operations team determined that for .co.uk domains, the registrant change cannot be processed by one.com directly — it must be done through Nominet, the registry for .uk domains. Resolution: Customer was directed to Nominet’s online transfer service (https://www.nominet.uk/transferring-your-domain-name/) where the current registrant initiates the transfer, both parties approve via confirmation emails, and a small fee (£10 + VAT) may apply. The submitted form could still be used for updating subscription/webspace ownership on one.com’s side if needed. Key lessons: (1) For .co.uk (.uk, .org.uk, .me.uk) domains, ownership/registrant changes must go through Nominet — one.com cannot process these directly. Always check TLD-specific requirements before initiating any ownership change process. (2) Detaching a domain from its hosting plan is a valid workaround for control panel-level changes, but it does not address registry-level ownership transfers. (3) When a customer has already submitted forms for an issue that requires a different process, acknowledge the effort and clearly explain what the forms can still be used for vs. what needs to happen separately.
+
+### Case Study 21: Registrant Organization Cannot Be Redacted from WHOIS/RDAP
+- **Ticket Reference:** Takeaway 37
+- **Customer Name:** Marius
+- **Customer Email:** mlanglete@protonmail.com
+- **Domain:** peptalitylabs.com
+- **Context:** Customer contacted support wanting to transfer peptalitylabs.com, but said they would stay with one.com if the Registrant Organization could be hidden or removed from the public RDAP/WHOIS record. Per one.com’s Domain Registration Data Publication Rules, for gTLDs (.com, .net, etc.) the Registrant Organization is considered non-personal data under NIS2 and is published by legal requirement. It cannot be redacted. The article explicitly states: "We cannot (and will not) redact any of the fields that are published by default." Customer was informed of this limitation. Key lesson: When a customer asks to hide WHOIS/RDAP information, check the Domain Registration Data Publication Rules article — certain fields (Organization, City, State/Province, Country) are mandatory publishes for gTLDs and cannot be removed regardless of customer preference. If the organization field is empty/blank, it won’t display, so clearing it could be a workaround if the customer hasn’t populated it.
 

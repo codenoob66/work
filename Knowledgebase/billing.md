@@ -129,3 +129,38 @@
 - **Customer Email:** N/A
 - **Domain:** N/A
 - **Context:** Internal reference discovery. The one.com customer support phone number was not documented in the knowledge base. Direct phone support is available at `+44 20 8106 0910`, weekdays 10am–2pm UTC. Live chat is available every day of the year and is the quickest contact method. Email support is available via `support@one.com` or through the help center contact form at `https://help.one.com/hc/en-us/requests/new`. Note: The Uberall support number (`+44 20 3769 3000`) is separate and only for Uberall-specific issues.
+
+### Case Study 9: Non-EU Customer Charged VAT Due to Incorrect Billing Country
+- **Ticket Reference:** Takeaway 27
+- **Customer Name:** Gamal
+- **Customer Email:** N/A
+- **Domain:** `spmarine.net`
+- **Context:** Customer in Egypt received a renewal invoice (SEK 2,705.21) with VAT charges applied. Customer questioned why VAT was being added since they are based in Egypt, not in Europe. The root cause is likely that the billing/contact address country on the account was set to an EU country or not properly updated. one.com, being registered in Sweden, must follow EU VAT rules — customers outside the EU should not be charged VAT. Resolution required the customer to verify and update their billing country to Egypt in the Control Panel. Additionally, the customer reported being unable to reply from the billing page ("BC" page). Key lesson: When a non-EU customer disputes VAT charges, always check the billing country setting in the account first, as this is the most common cause.
+
+### Case Study 10: Late Cancellation with Domain Renewal Fee Only
+- **Ticket Reference:** Takeaway 28
+- **Customer Name:** Matt Russell
+- **Customer Email:** matt@matthewrussell.co.uk
+- **Domain:** nimbus123123.com
+- **Context:** Customer's domain was scheduled for debt collection (£150.24 + £10 reactivation fee). Customer claimed the domain was only used for testing and wanted to cancel. Support offered a late cancellation, waiving hosting and late/reminder fees, reducing the balance to just the £25.19 domain renewal fee (which goes to the registry, not one.com revenue). Customer agreed, paid the £25.19, and requested written confirmation that no further invoices would be issued. After payment was confirmed, the webspace was deleted in the back-office. Key lesson: When a late cancellation is offered and the customer pays only the domain renewal fee (a pass-through cost to the registry), once payment is received, proceed with deleting the webspace in the back-office. The domain remains registered until expiry but no further invoices are generated.
+
+### Case Study 11: Principal Paid to one.com After Case Already with Intrum
+- **Ticket Reference:** Takeaway 30
+- **Customer Name:** Naureen Nayyar
+- **Customer Email:** N/A
+- **Domain:** 2055.se
+- **Context:** Customer missed the pre-collection warning (was on holiday) for domain renewal invoice 43779594 (SEK 298.75, order 10081908). She paid the principal to one.com after handover; Intrum case 5441059 still claimed SEK 485.13 (capital 298.75 + interest 6.38 + collection costs 180.00). Reminder fee SEK 100 was paid then fully credited (credit note 44750933); one.com balance for 2055.se was 0. Customer wanted help contacting debt collection, a phone number, and ultimately to cancel. Key lesson: Once a claim is with Intrum, paying the principal to one.com does **not** close the Intrum case. Do not tell the customer there is nothing left with collection if Intrum already holds the case. Correct guidance: principal is settled with one.com; customer must settle the **remaining** Intrum amount (interest + collection costs only — here SEK 186.38), not the full Intrum total and not a second capital payment. Apologise if earlier advice said one.com would cancel Intrum on their behalf. Advise using Intrum bankgiro/OCR/Swish/Mina sidor, note capital already paid to one.com, and contact Intrum if their portal still shows the full amount. Separately: non-payment is not cancellation — offer a cancellation link if they still want to stop auto-renew. Phone support: +44 20 8106 0910 (weekdays 10:00–14:00 UTC).
+
+### Case Study 12: Previous Cancellation Request Not Carried Out — Domain Auto-Renewed and Sent to Debt Collection
+- **Ticket Reference:** Takeaway 31
+- **Customer Name:** André
+- **Customer Email:** andre@frydenlund.biz
+- **Domain:** launchify.no
+- **Context:** Customer contacted support about an Intrum debt collection invoice (1,284.57 NOK) for launchify.no. He claimed he had previously contacted one.com to cancel all active domains and was told everything would be handled. However, launchify.no was never properly cancelled and auto-renewed in May 2026 with a bundled hosting package the customer says he never knowingly ordered. The original order (May 2025) was only 180 NOK for the first year, so the customer did not notice the hosting add-on at the time. The renewal triggered a significant price increase, which went unpaid and was handed to Intrum. During this chat the domain and hosting were cancelled via cancellation link. Key lesson: When a customer requests cancellation of all domains, every domain on the account must be verified and closed — do not assume the request was carried out without checking. Always confirm the full list of active domains/services with the customer before ending the conversation. Also flag that bundled hosting may not be obvious to customers at checkout; when discussing renewal charges, clarify what each line item is. For the Intrum invoice: once a case is with debt collection, the customer must pay Intrum directly and send proof of payment to one.com for record updates.
+
+### Case Study 13: Order Deletion Blocked by Registered Contact Mismatch
+- **Ticket Reference:** Takeaway 33
+- **Customer Name:** Kanon
+- **Customer Email:** kanon210.com@gmail.com
+- **Domain:** ascanva.com
+- **Context:** Customer contacted support about a pending domain order for ascanva.com. The order was under review (standard process, up to 24 hours). Customer became impatient and requested a refund. Support initially agreed to delete the order and process the refund, but upon attempting to do so discovered the customer's name was not listed as the registered contact on the account. The deletion and refund could not be processed without authorization from the registered account holder. Resolution: advised the customer to wait the full 24 hours for the order to activate. If still not active after that time, they can follow up. For a refund, the registered account holder would need to contact support directly. Key lesson: Before promising order deletions or refunds, verify that the person contacting support is the registered account holder. If they are not, explain the security requirement upfront rather than after attempting the action — this avoids setting false expectations and having to walk back a commitment.

@@ -19,6 +19,29 @@
   - For manual migrations, database connection details must match the configured database inside `wp-config.php` (DB_NAME, DB_USER, DB_PASSWORD, DB_HOST).
   - Common white screen of death (WSOD) errors can often be resolved by temporarily disabling all plugins (renaming the `wp-content/plugins` folder) or enabling PHP error reporting.
 
+### 3. Deactivate WordPress Plugins via phpMyAdmin
+- **Source:** [Deactivate WordPress plugins in phpMyAdmin](https://help.one.com/hc/en-us/articles/115005593985-Deactivate-WordPress-plugins-in-phpMyAdmin) (last updated March 18, 2025)
+- **Scenario:** A plugin breaks the WordPress site and the customer cannot log in to deactivate it from the dashboard. All plugins can be deactivated via phpMyAdmin without logging into WordPress.
+- **Resolution Steps:**
+  1. Open phpMyAdmin (see also: [How do I open and use phpMyAdmin?](https://help.one.com/hc/en-us/articles/115005585909)).
+  2. Select the WordPress database in the left menu (often matches the domain, e.g. `onecom_domain_com`).
+  3. Open the options table: `wp_options` (or `wp_XXXX_options` for multisite).
+  4. Click **Search** and set:
+     - Column: `option_name`
+     - Operator: `=`
+     - Value: `active_plugins`
+     Then click **Go**.
+  5. Click **Edit** on the result row.
+  6. Clear the entire **option_value** field (leave it empty) and click **Go**.
+- **Result:** All plugins are deactivated. The customer can log back into WordPress and reactivate plugins one by one to identify the problematic plugin.
+- **Related help articles:**
+  - Fix the WordPress White Screen of Death
+  - Restore a backup of your web space
+  - How do I open and use phpMyAdmin?
+  - How do I open and use File Manager?
+  - Guide: How to use phpMyAdmin
+- **Note:** An alternative (file-based) method is renaming `wp-content/plugins` via File Manager — see procedure 2 above.
+
 ---
 
 ## Specific Case Studies & Ticket Takeaways

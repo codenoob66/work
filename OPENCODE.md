@@ -65,13 +65,11 @@ Format output as structured analysis, not prose.
 
 Read-up summary of the conversation thread — do NOT draft a response. Provide a quick briefing to get up to speed on the ticket. If a field does not apply, write "N/A". Write naturally, like you're leaving notes for yourself — not like a template.
 
-- **Read-up summary** — one or two sentences: what's this ticket about overall?
+- **Read-up summary** — what's this ticket about overall?
 - **Customer wants** — what is the customer ultimately trying to achieve?
-- **What has already been requested** — what have we asked the customer for (documents, info, actions)?
-- **What has already been provided/tried** — what has the customer sent back, or what steps have already been attempted?
-- **Current blocker** — what is stopping this ticket from moving forward right now?
-- **Next needed action** — what specifically needs to happen next, and who needs to do it?
-- **What I will NOT ask again** — what has already been asked or covered that should not be repeated to avoid frustrating the customer?
+- **Status** — where things stand right now (e.g., "Needs refund, already sent receipt.")
+- **Next Step** — what specifically needs to happen next (e.g., "Awaiting SME approval.")
+- **Do NOT ask for** — what's already been covered or provided (e.g., "Order number or receipt.")
 
 ### @takeaways
 

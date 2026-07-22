@@ -13,17 +13,24 @@
 
 ### 2. Outbound Email Blocked by Gmail (Unauthenticated Sender SPF/DKIM on External DNS)
 - **Scenario:** Outbound emails to Gmail/Google accounts are bouncing with authentication errors.
-- **Diagnostic Error:** `Your email has been blocked because the sender is unauthenticated. Gmail requires all senders to authenticate with either SPF or DKIM.`
-- **Root Cause:** The domain's email is hosted at one.com (MX records point to one.com), but its nameservers (DNS) are managed by an external provider (e.g., Wix, Cloudflare, GoDaddy). Because DNS is external, one.com cannot automatically publish SPF or DKIM records. Due to Google's strict email sender authentication requirements, emails sent from an unauthenticated domain are blocked.
+- **Diagnostic Error:** `Your email has been blocked because the sender is unauthenticated. Gmail requires all senders to authenticate with either SPF or DKIM.` OR `Unauthenticated email from [domain] is not accepted due to domain's DMARC policy.`
+- **Root Cause (External DNS):** The domain's email is hosted at one.com (MX records point to one.com), but its nameservers (DNS) are managed by an external provider (e.g., Wix, Cloudflare, GoDaddy). Because DNS is external, one.com cannot automatically publish SPF or DKIM records. Due to Google's strict email sender authentication requirements, emails sent from an unauthenticated domain are blocked.
+- **Root Cause (Combined SPF+DMARC Record):** Even when DNS is hosted at one.com, emails can still bounce if the SPF and DMARC records are incorrectly combined into a single TXT record. Gmail's strict DMARC enforcement requires proper separation of these records.
 - **Resolution Steps:**
   1. Check the domain's current nameservers using a DNS lookup or WHOIS.
-  2. If DNS is hosted externally, explain to the customer that they must add the required TXT/CNAME records in their external registrar's DNS control panel.
-  3. **SPF Record to Add:**
+  2. Check the current DNS TXT records for the domain — look for any combined SPF+DMARC records.
+  3. If DNS is hosted externally, explain to the customer that they must add the required TXT/CNAME records in their external registrar's DNS control panel.
+  4. If a combined SPF+DMARC record is found, instruct the customer to:
+     - Delete the existing combined TXT record
+     - Create a separate SPF TXT record: Type TXT, Host: @, Value: `v=spf1 include:_custspf.one.com ~all`
+     - Create a separate DMARC TXT record: Type TXT, Host: `_dmarc`, Value: `v=DMARC1; p=none; rua=mailto:[customer's email]`
+  5. **SPF Record to Add:**
      - **Type:** TXT
      - **Host/Name:** `@` (or leave blank)
      - **Value:** `v=spf1 include:_custspf.one.com ~all`
-  4. **DKIM Records to Add:**
+  6. **DKIM Records to Add:**
      - Advise that DKIM requires CNAME records (2 for migrated, 4 for non-migrated domains) that support can generate for them.
+- **Important Note:** Always check for both scenarios — external DNS AND combined records. DNS propagation may take up to 24-48 hours after changes.
 
 ### 3. Changing or Resetting Email Password
 - **Scenario:** Customer wants to change their email password or has forgotten it.
@@ -96,3 +103,24 @@
 - **Customer Email:** azaboztrom@yahoo.se
 - **Domain:** asabostrom.com, parbostrom.com, hypnagogapress.com, writeyourself.com, kammarheit.com (recipient: info@asabostrom.com)
 - **Context:** Customer reported contact forms on several WordPress sites not delivering messages (example: https://asabostrom.com/contact/). Support tests were mixed: forms on asabostrom.com and writeyourself.com succeeded after the customer deactivated a caching plugin (common cause: cached pages serving expired WordPress nonces). Customer still saw errors due to browser cache; Incognito/clear cache recommended. Some test mails landed in spam. hypnagogapress.com form accepted submission; writeyourself.com tests arrived. parbostrom.com/contact/ and kammarheit.com/contact/ failed for support with "There was an error trying to send your message. Please try again later." Escalated to engineers; guidance was to install WP SMTP and configure with one.com email host (guide: https://help.one.com/hc/en-us/articles/6949620532113-How-to-send-emails-in-WordPress-using-the-WP-SMTP-Mail-plugin). Also note: customer browser tools (e.g. Norton anti-tracking) can interfere with form submissions client-side; exclude contact pages from cache plugins; SPF/DMARC help deliverability but do not fix form send errors by themselves.
+
+### Case Study 6: Email Restoration from Backup & Restore Service
+- **Ticket Reference:** Takeaway 29
+- **Customer Name:** N/A
+- **Customer Email:** N/A
+- **Domain:** N/A
+- **Context:** Reference information from one.com's Backup & Restore service (https://www.one.com/en-gb/website-security/backup/). The service provides automatic daily backups for email, websites, and databases with up to 2 weeks retention. To restore email: go to Control Panel, select the email address, choose a date, and set up new credentials — the restore creates a new mail account rather than overwriting the existing one. Email notification is sent upon completion. Backup & Restore is included with Website Builder Premium or larger plans; otherwise available as an add-on from the Control Panel. Note: restoration always creates a new account, not an overwrite of the current one.
+
+### Case Study 7: Exporting Webmail Mailboxes to PST for Microsoft Outlook
+- **Ticket Reference:** Takeaway 35
+- **Customer Name:** Shahmir Baloch
+- **Customer Email:** N/A
+- **Domain:** communitycareworker.com
+- **Context:** Customer requested backups of all webmail mailboxes as .pst files for import into Microsoft Outlook. one.com does not offer a direct PST download from Webmail or the Control Panel. The correct method is to connect each mailbox to Outlook via IMAP (imap.one.com, port 993, SSL/TLS; send.one.com, port 465, SSL/TLS), let it fully sync, then use Outlook's Import/Export feature (File → Open & Export → Import/Export → Export to a file → Outlook Data File (.pst)) to create the .pst file. This must be repeated for each mailbox. Customer asked whether a Microsoft license is needed per mailbox — the answer is no; only one Outlook desktop installation is required, and all mailboxes can be added to it via IMAP. Key point: clarify upfront that PST creation requires Outlook on the desktop, as one.com has no native PST export. Avoid confirming "yes we can provide PSTs" before explaining the actual method.
+
+### Case Study 8: DMARC Rejection Due to Combined SPF+DMARC TXT Record
+- **Ticket Reference:** Takeaway 36
+- **Customer Name:** Ahmad Bachir
+- **Customer Email:** info@coolmaster.be
+- **Domain:** coolmaster.be
+- **Context:** Customer's outbound emails from info@coolmaster.be were bouncing with a 550-5.7.26 DMARC rejection error from Gmail: "Unauthenticated email from coolmaster.be is not accepted due to domain's DMARC policy." Customer was sending via Outlook PWA through one.com. Investigation revealed the domain's SPF and DMARC records were incorrectly combined into a single TXT record, causing DMARC authentication to fail. DNS was hosted at one.com (not external). Resolution: customer instructed to delete the combined TXT record and create two separate records — an SPF TXT record (Host: @, Value: v=spf1 include:_custspf.one.com ~all) and a DMARC TXT record (Host: _dmarc, Value: v=DMARC1; p=none; rua=mailto:info@coolmaster.be). DNS propagation may take 24-48 hours. Key lesson: when diagnosing DMARC rejection errors, always check whether SPF and DMARC are properly separated into distinct TXT records, not just whether records exist.
