@@ -124,3 +124,17 @@
 - **Customer Email:** info@coolmaster.be
 - **Domain:** coolmaster.be
 - **Context:** Customer's outbound emails from info@coolmaster.be were bouncing with a 550-5.7.26 DMARC rejection error from Gmail: "Unauthenticated email from coolmaster.be is not accepted due to domain's DMARC policy." Customer was sending via Outlook PWA through one.com. Investigation revealed the domain's SPF and DMARC records were incorrectly combined into a single TXT record, causing DMARC authentication to fail. DNS was hosted at one.com (not external). Resolution: customer instructed to delete the combined TXT record and create two separate records — an SPF TXT record (Host: @, Value: v=spf1 include:_custspf.one.com ~all) and a DMARC TXT record (Host: _dmarc, Value: v=DMARC1; p=none; rua=mailto:info@coolmaster.be). DNS propagation may take 24-48 hours. Key lesson: when diagnosing DMARC rejection errors, always check whether SPF and DMARC are properly separated into distinct TXT records, not just whether records exist.
+
+### Case Study 9: Out-of-Office Auto-Reply Setup in Webmail
+- **Ticket Reference:** Takeaway 38
+- **Customer Name:** Edward
+- **Customer Email:** info@natureandtherapy.co.uk
+- **Domain:** natureandtherapy.co.uk
+- **Context:** Customer wanted to set up an out-of-office reply for their mailbox. They use webmail on their laptop and Apple Mail in the office. All email accounts under the domain were basic email. Customer was guided to set up the auto-reply via webmail (Settings > Auto-reply > Edit), which works server-side and responds to incoming emails regardless of whether the customer is logged in or which email client they use. Key lesson: out-of-office/auto-reply is always configured through one.com webmail, not through the email client (e.g., Apple Mail, Outlook). This applies to all email plans including basic email.
+
+### Case Study 10: Contact Form 7 Email Failure Due to PHP Mail Disabled (SMTP Fix)
+- **Ticket Reference:** Takeaway 44 (Shared with WordPress)
+- **Customer Name:** Sebastian
+- **Customer Email:** sebastian@everday.se
+- **Domain:** meraresurs.se
+- **Context:** Customer reported Contact Form 7 emails not sending on https://www.meraresurs.se/kontakt/. Error captured via WP Mail SMTP plugin: "Could not instantiate mail function." The site was using the default PHP mail() function, which is disabled on the hosting. The customer's custom MX records were initially flagged by the automated support but were not the actual cause — MX records affect receiving, not sending. Escalated to 2nd level, who confirmed the fix: (1) create the desired sender email account (e.g. wordpress@meraresurs.se) in CP > Email, and (2) configure WP Mail SMTP to use one.com's SMTP server with those credentials instead of the default PHP mail function. Key lesson: when "Could not instantiate mail function" appears on one.com hosting, PHP mail is blocked — the customer must use SMTP via an email account configured in the Control Panel. Guide: https://help.one.com/hc/en-us/articles/6949620532113-How-to-send-emails-in-WordPress-using-the-WP-SMTP-Mail-plugin

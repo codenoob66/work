@@ -1,4 +1,4 @@
-# AGENT.md
+# CLAUDE.md
 
 ## Purpose
 
@@ -63,13 +63,11 @@ Format output as structured analysis, not prose.
 
 ### @brief
 
-Read-up summary of the conversation thread — do NOT draft a response. Provide a quick briefing to get up to speed on the ticket. If a field does not apply, write "N/A". Write naturally, like you're leaving notes for yourself — not like a template.
+Quick briefing of the conversation thread — do NOT draft a response. Write in first person as Rafael, like quick notes to self. No supporter names. Keep it short and direct.
 
-- **Read-up summary** — what's this ticket about overall?
-- **Customer wants** — what is the customer ultimately trying to achieve?
-- **Status** — where things stand right now (e.g., "Needs refund, already sent receipt.")
-- **Next Step** — what specifically needs to happen next (e.g., "Awaiting SME approval.")
-- **Do NOT ask for** — what's already been covered or provided (e.g., "Order number or receipt.")
+- **Status** — where things stand right now
+- **Next Step** — what I need to do next
+- **Do NOT ask for** — what's already been covered
 
 ### @takeaways
 
@@ -117,5 +115,68 @@ Provide:
 - **Details** — error messages, domains, IPs, ticket numbers — only what 2nd level actually needs
 
 Keep total output under 150 words. No fluff, no pleasantries, no restating the obvious.
+
+### @escalate_web
+
+Prepare a web escalation form for 2nd level support — do NOT draft a customer response. Analyze the conversation thread and fill in the template below with whatever information is available. If a field cannot be determined from the thread, leave it as a blank or mark it as "N/A".
+
+**Template:**
+
+```
+Customer domain:
+
+Is the domain using our nameservers?
+
+Which is the full URL in the browser where the issue occurs?
+
+Please provide steps to reproduce the issue:
+
+What error message is shown, if any?
+
+Screenshots:
+
+Login details (optional):
+```
+
+**Rules:**
+
+- Extract and fill in fields directly from the conversation thread.
+- If the customer provided screenshots or referenced them, note where they are (e.g., "Attached in thread" or "N/A").
+- If login details were shared, include them; otherwise leave blank.
+- Keep it clean — just the template with answers, no extra commentary.
+- If the thread does not contain enough information to fill most fields, say so after the template and list what's missing.
+
+### @escalate_email
+
+Prepare an email escalation form for 2nd level support — do NOT draft a customer response. Analyze the conversation thread and fill in the template below with whatever information is available. If a field cannot be determined from the thread, leave it blank or mark it as "N/A".
+
+**Note:** For Exchange issues, instruct 2nd level to use the **Escalation to 2nd level::Specialized::Exchange** macro.
+
+**Template:**
+
+```
+Affected email account:
+
+For Exchange issues. Please use the Escalation to 2nd level::Specialized::Exchange macro
+
+Specify what the customer is using (webmail, mail client, mail form or mobile sync):
+
+Please provide steps to reproduce the issue:
+
+What error message is shown, if any?
+
+Screenshots (settings, error message):
+
+Login details (optional):
+```
+
+**Rules:**
+
+- Extract and fill in fields directly from the conversation thread.
+- Identify whether the customer is using webmail, a mail client (e.g., Outlook, Thunderbird), a mail form, or mobile sync — if unclear, mark as "N/A".
+- If the customer provided screenshots or referenced them, note where they are (e.g., "Attached in thread" or "N/A").
+- If login details were shared, include them; otherwise leave blank.
+- Keep it clean — just the template with answers, no extra commentary.
+- If the thread does not contain enough information to fill most fields, say so after the template and list what's missing.
 
 ---
