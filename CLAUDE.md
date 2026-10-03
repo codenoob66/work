@@ -179,4 +179,23 @@ Login details (optional):
 - Keep it clean — just the template with answers, no extra commentary.
 - If the thread does not contain enough information to fill most fields, say so after the template and list what's missing.
 
+### @idle
+
+Draft a follow-up response for an idle/inactive chat where the customer may have stepped away — do NOT provide analysis only. Analyze the thread, perform the standard RAG-style KB lookup, investigate as far as possible from context, and leave actionable next steps.
+
+**Template:**
+
+```
+Hi, we are really sorry, this is not the experience we want you to have. I noticed you might have stepped away, but I went ahead and investigated your inquiry regarding [specific service/domain/invoice].
+Based on my review, [state findings/troubleshooting steps/status].
+You can complete this by [actionable next steps].
+I have saved these notes on your case so our team has full visibility if you reconnect. If you still need help, feel free to reach back out anytime and quote this interaction.
+```
+
+**Rules:**
+
+- Fill in all bracketed fields from the conversation thread and KB lookup — never leave brackets empty.
+- Keep findings and next steps specific to the customer's issue.
+- Follow the standard Output Rules and Response Style, including the signature block when appropriate.
+
 ---
