@@ -204,31 +204,12 @@ Prepare a short Slack message for 2nd level support or a colleague — do NOT dr
 - If my note specifies what to ask, build the message around that.
 - If critical details are missing (e.g., domain), add a short line after the message listing what's missing.
 
-### @idle
+### @discuss
 
-Draft a follow-up email for when a customer was waiting in the chat queue and the ticket was moved to email. The input will be the chat/conversation thread pasted after the command. Use it to personalize the email. Do NOT summarize or analyze the thread in the output.
+Talk through the conversation thread with me — do NOT draft a customer response unless I explicitly ask for one. The input will be the customer conversation thread, with or without a side conversation (e.g. with 2nd level or a colleague).
 
-**Steps:**
-
-1. Read the thread and pick out the customer's name, domain, and the issue they described (if any).
-2. Check what information the customer already gave, and what is still missing to start troubleshooting.
-3. Draft the email using the structure below.
-
-**Tone:** Apologetic for the wait, reassuring, action-oriented in one.com support tone. Friendly and concise.
-
-**Structure:**
-- Greeting using the customer's name (from the thread)
-- Brief apology for the wait (not the experience we want)
-- Show I've read their message by referring to their issue in one short sentence (e.g., "I understand you're having trouble with email on [domain]")
-- Reassurance that I'm here to help and they don't need to rejoin the chat
-- Ask them to reply to the email with only the details still missing (see rules)
-- Friendly close
-
-**Rules:**
-- Do not ask for information the customer already provided in the thread.
-- If domain, issue details, or screenshots are missing, ask for them. Otherwise, just invite them to reply with any extra details.
-- If the customer's name, domain, or issue cannot be found in the thread, use a placeholder such as [Customer Name] or [Domain] instead of guessing.
-- Do not promise a fix, a timeframe, or any account-specific outcome.
-- If no thread is pasted, return the generic reusable template with placeholders.
-- Return only the email (subject line + body). No analysis, no notes, no Markdown formatting around it.
-- Keep it under ~100 words.
+- Read and understand the entire thread plus any side conversation.
+- Maintain context throughout.
+- Answer questions, explain what is happening, point out what is missing or unclear, and suggest options or next steps.
+- If relevant, perform the same RAG-style KB lookup to ground the discussion in historical policies and resolution steps.
+- Do NOT draft, suggest full wording for, or outline a customer reply until I say so.
