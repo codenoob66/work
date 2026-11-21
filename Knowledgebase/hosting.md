@@ -108,6 +108,17 @@
   2. Advise that they can design and publish their site directly through the Website Builder editor without needing FTP.
   3. If they have custom files/scripts to upload and require FTP access, advise them to upgrade to a hosting plan that includes web space.
 
+### 9. Domain Points to External IP — Apex Works but www Fails SSL
+- **Scenario:** Customer uses one.com nameservers but points @ and www A-records to an external IP; apex https works, www https fails with ERR_SSL_PROTOCOL_ERROR, and http://www redirects to https://www and fails the same way.
+- **Key Rules & Diagnosis:**
+  - Verify both @ and www A-records point to the same external IP — if correct, no further DNS change is needed on the one.com side.
+  - ERR_SSL_PROTOCOL_ERROR with working apex means DNS resolves and reaches the external server, but the server has no valid cert/hostname for www — not propagation.
+  - one.com SSL only covers site files hosted with us; it cannot fix a cert on an external server.
+- **Resolution Steps:**
+  1. Confirm DNS for both records, and test http vs https for apex and www separately in incognito/cleared cache.
+  2. Escalate via web form with repro steps if confirmation is needed, then direct the customer to their external provider to add www as alias/hostname and include www in the SSL cert / re-issue.
+  3. Offer to verify once the provider has updated.
+
 ---
 
 ## Specific Case Studies & Ticket Takeaways
@@ -307,3 +318,10 @@
 - **Customer Email:** garry_smith@live.com
 - **Domain:** chateau-haut-meillac.com (subdomain uk.chateau-haut-meillac.com)
 - **Context:** Same 19445519 case as WordPress Case Study 21, hosting angle. Subdomain uk.chateau-haut-meillac.com showed ERR_SSL_VERSION_OR_CIPHER_MISMATCH on wp-admin/install.php, later generic not secure after SSL push, while 1-click installer stayed on Subdomain not ready yet. 1st level had customer delete failed installation, pushed SSL via 1OYF8 and P3MYL, waited 15-25 mins, retested. 2nd level (Charles Keith Aquisan) confirmed valid SSL, but customer still saw no change. Engineers continued overnight with customer offline. Key lesson: SSL valid alone does not clear installer dns-check; always pair SSL re-push with failed-install delete plus propagation wait, then retest both installer and direct install.php before marking resolved. Key lesson: www-static NXDOMAIN with locked CDN toggle needs 2nd-level per-domain CDN disable — do not treat as customer DNS error and do not promise 1st-level toggle.
+
+### Case Study 29: External IP Apex Works but www Fails SSL — Cert Missing on External Host (Shared with Domain)
+- **Ticket Reference:** Takeaway 68 (Shared with Domain)
+- **Customer Name:** Henrika
+- **Customer Email:** styrelsen@liljeholmsberget.se
+- **Domain:** liljeholmsberget.se, www.liljeholmsberget.se
+- **Context:** Customer pointed both @ and www A-records at one.com to new external IP 54.194.81.69 about 4 hours earlier. Apex https://liljeholmsberget.se/ worked, www https://www.liljeholmsberget.se/ failed with ERR_SSL_PROTOCOL_ERROR; http://www.liljeholmsberget.se/ redirected to https://www and failed the same way, while http://liljeholmsberget.se/ redirected to working https. Swedish support found nothing wrong and advised 1-hour wait; issue persisted 3+ hours. 1st level verified DNS correct for both records, explained apex vs www are separate records, tested incognito/clear cache, and escalated via web form with full repro steps. 2nd level (Charles Keith Aquisan) confirmed SSL issue is on external provider — one.com SSL only covers site files hosted with us. Follow-up email confirmed no further DNS change needed and asked external provider to add www.liljeholmsberget.se as alias/hostname and include www in cert/re-issue, offering to verify after. Key lessons: (1) working apex + failing www after external-IP move = missing www hostname/cert on external server, not propagation; (2) http→https redirect failing the same way confirms server-side; always test http vs https for both hosts separately; (3) never promise a 1-hour propagation fix when apex already resolves.

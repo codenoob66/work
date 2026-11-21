@@ -2,6 +2,14 @@
 
 ## General Procedures & Policies
 
+### 0. Common Forms — Canonical Links (Always Use These)
+- **Change Email:** [change-email-form.pdf](https://forms.support.one/form/change-email-form.pdf) — registrant/subscription email change when customer lacks access to current email (with photo ID to `support@one.com`).
+- **Disable Two-Step Verification:** [disable-two-step-verification.pdf](https://forms.support.one/form/disable-two-step-verification.pdf) — 2FA removal when customer lost authenticator/phone access (signed form + photo ID).
+- **General Owner Change:** [general-owner-change.pdf](https://forms.support.one/form/general-owner-change.pdf) — physical Domain Owner Form for owner changes when current owner cannot log in or access email (with photo ID).
+- **Termination:** [termination-form.pdf](https://forms.support.one/form/termination-form.pdf) — immediate termination/deletion of subscription and all data (signed form + photo ID from registered email). Do NOT substitute the help-center article link.
+- **IPS Tag Change:** [request-to-change-ips-tag.pdf](https://forms.support.one/form/request-to-change-ips-tag.pdf) — required for Transfer Out when request comes from any non-registrant address (with matching registrant info/signature; company proof if owner is not private).
+- Do not use old URLs (`one.com/en/support/forms/...`, `one-docs.com/forms/...`) — always use the `forms.support.one` links above in drafts.
+
 ### 1. Domain-Specific DNS Access (Guest User)
 - **Scenario:** A reseller wants to grant their client DNS administration access (creating and editing records) for a single domain (e.g., `domain.dk`) without giving access to the entire control panel.
 - **Key Rules & Requirements:**
@@ -33,7 +41,7 @@
 - **Registrant Email (Domain/Registry Level):**
   - This is the email registered with the domain registry (e.g., ICANN for `.com`, Punktum.dk for `.dk`, Nominet for `.co.uk`).
   - It is used for domain ownership verification, transfer authorization (Auth-ID delivery), and registry-mandated communications.
-  - Cannot be updated by the customer directly — requires the **Change Email Form** (PDF) with photo ID to be sent to `support@one.com`.
+  - Cannot be updated by the customer directly — requires the **Change Email Form** ([change-email-form.pdf](https://forms.support.one/form/change-email-form.pdf)) with photo ID to be sent to `support@one.com`.
   - Updating this email in the one.com system does NOT update the subscription/account email, and vice versa.
 
 - **Key Distinction:**
@@ -77,7 +85,7 @@
   - **Suspension Cause:** ICANN/registry requires periodic contact detail verification. If unanswered, the domain is suspended, causing all services (website and email) to stop working.
   - **Identify Registrant Email:** Guide the customer to check the current contact email using the one.com dashboard or the handover/transfer link `https://www.one.com/admin/handover.do` (under domain details) if GDPR policies prevent giving it out.
   - **Contact Email Update Procedure:** If the customer no longer has access to the registered email:
-    1. Provide the **Change Email Form** (PDF).
+    1. Provide the **Change Email Form** ([change-email-form.pdf](https://forms.support.one/form/change-email-form.pdf)).
     2. Instruct them to fill it out, selecting "**Domain only**", and sign it (handwritten or digital signatures are accepted).
     3. Request a clear copy of a valid photo ID.
   - **Resolution Steps:**
@@ -99,7 +107,7 @@
   5. Inform them they will receive a cancellation confirmation by email, and no new invoices will be generated for that subscription.
 
 - **Resolution Steps (Immediate Termination via Form):**
-  1. Provide the customer with the link to the termination form: `https://help.one.com/hc/en-us/articles/7565729769873-Terminate-domain-and-web-space`
+  1. Provide the customer with the link to the termination form: [termination-form.pdf](https://forms.support.one/form/termination-form.pdf)
   2. Explain the process:
      - Print, fill out, and sign the form.
      - Attach a photo or scan of the signed form.
@@ -126,7 +134,7 @@
   6. Click the **Change email address** link inside that email to finalize the update.
 - **Key Rules:**
   - If domain and subscription have different owners, an **update key** is sent to the *current* registered email address to authorize the change.
-  - If the customer lacks access to the current email, they must use the physical **Change Email form**.
+  - If the customer lacks access to the current email, they must use the physical **Change Email form** ([change-email-form.pdf](https://forms.support.one/form/change-email-form.pdf)).
 
 ### 11. Changing Domain Owner's Contact Details
 - **Standard Procedure:**
@@ -137,7 +145,7 @@
 - **Special Cases:**
   - **gTLDs (.com, .net, .org, etc.):** Changing the email address often triggers a formal "Owner Change" procedure due to ICANN regulations.
   - **Different details:** If subscription and domain details differ, you must click **Request update key** which sends a code to the current domain email. Copy and paste this key into the Control Panel to verify the change.
-  - **Inaccessible Email:** If the domain email cannot be accessed, the physical **Domain Owner Form** must be downloaded, signed, and sent with a copy of a valid ID to support.
+  - **Inaccessible Email:** If the domain email cannot be accessed, the physical **Domain Owner Form** ([general-owner-change.pdf](https://forms.support.one/form/general-owner-change.pdf)) must be downloaded, signed, and sent with a copy of a valid ID to support.
 
 ### 12. Changing Owner of Web Space and Domain (Ownership Change)
 - **Standard Procedure (Control Panel):**
@@ -149,7 +157,7 @@
   6. **Confirm (New Owner):** The new owner receives an email with a link. They must click it, confirm their details, approve the domain registration agreement, and accept the terms of business.
 - **Key Rules:**
   - **Fees:** There is usually a fee associated with changing the owner of a web space or domain.
-  - **Inaccessible current account:** If the current owner cannot log in or access their email, they must fill out and sign the physical **Domain Owner Form** and send it to support with a copy of their ID.
+  - **Inaccessible current account:** If the current owner cannot log in or access their email, they must fill out and sign the physical **Domain Owner Form** ([general-owner-change.pdf](https://forms.support.one/form/general-owner-change.pdf)) and send it to support with a copy of their ID.
 
 ### 13. Regaining Access & Changing Contact Details when Unable to Log In
 - **Scenario:** A customer cannot log in to their Control Panel and needs to update their contact details to regain access.
@@ -165,7 +173,7 @@
     5. Enter your new password twice and click **Save**.
   - **No Access to Registered Email (Use Change Email Form):**
     1. Support cannot disclose or update contact details directly over phone or chat.
-    2. Direct the customer to the online [Change Email form](https://www.one.com/en/support/forms/change-email) (Google Chrome is recommended).
+    2. Direct the customer to the [Change Email form](https://forms.support.one/form/change-email-form.pdf) (Google Chrome is recommended).
     3. The customer must fill out the details (specifying Subscription, Domain, or both).
     4. They must attach a copy of a valid photo ID and a signed copy of the form.
     5. *Privacy/Safety:* Advise them that they only need to show full name, date of birth, signature, and expiry date. Other sensitive information on the ID can be blacked out.
@@ -404,7 +412,7 @@ See the price list or calculator on one.com.
 - **Customer Name:** Alex
 - **Customer Email:** alex@alexandrawhitejewellery.co.uk
 - **Domain:** alexandrawhitejewellery.co.uk
-- **Context:** Customer could not receive authenticator codes for Control Panel 2FA. Support Robot sent password reset email and link to disable-2FA form (https://one-docs.com/forms/disable-two-step-verification.pdf). Customer completed the signed form and submitted it with photo ID directly in live chat, then asked for receipt acknowledgement and the support email address. Rafael accepted the in-chat submission, verified the documents, disabled 2FA in the back-office, advised to wait 2-3 minutes then retry login at one.com/login, and stayed on chat until the customer confirmed login worked. Key lessons: (1) signed disable-2FA form + valid ID submitted in-chat can be processed without redirecting to email; (2) allow 2-3 minutes propagation after disabling before customer retries; (3) confirm successful login live before closing and requesting survey/Trustpilot feedback.
+- **Context:** Customer could not receive authenticator codes for Control Panel 2FA. Support Robot sent password reset email and link to disable-2FA form (https://forms.support.one/form/disable-two-step-verification.pdf). Customer completed the signed form and submitted it with photo ID directly in live chat, then asked for receipt acknowledgement and the support email address. Rafael accepted the in-chat submission, verified the documents, disabled 2FA in the back-office, advised to wait 2-3 minutes then retry login at one.com/login, and stayed on chat until the customer confirmed login worked. Key lessons: (1) signed disable-2FA form + valid ID submitted in-chat can be processed without redirecting to email; (2) allow 2-3 minutes propagation after disabling before customer retries; (3) confirm successful login live before closing and requesting survey/Trustpilot feedback.
 
 ### Case Study 26: .com Expiration, RedemptionPeriod and PendingDelete Lifecycle
 - **Ticket Reference:** Takeaway 53
@@ -433,4 +441,18 @@ See the price list or calculator on one.com.
 - **Customer Email:** garry_smith@live.com
 - **Domain:** chateau-haut-meillac.com (subdomain uk.chateau-haut-meillac.com)
 - **Context:** Same 19445519 case as WordPress Case Study 21, domain angle. Domain uses external GoDaddy nameservers with A record uk to 46.30.215.140 in place since 30 Oct, live www must stay untouched. Despite correct external A record, one.com installer redirected subdomain to dns-check URL with Subdomain not ready yet and install.php failed SSL. Prior SSL-fix confirmations did not hold. Escalated with full repro steps, related tickets #19396951 #19412735, and explicit live-site constraint. Key lesson: for external-NS subdomains verify the specific uk A record separately from apex/www, document the live-site do-not-touch constraint in every escalation, and do not treat propagated A record as proof that SSL/installer activation completed. Key lessons: (1) green dnschecker checks mean propagated, not correct — always verify the MX value itself; (2) external-NS domains must be fixed at the external host — one.com cannot change Wix DNS; (3) standard <domain>.mx.one.com is not always correct — use the 2nd-level-provided mx.service.one value; (4) customer had been given 3 different MX values by colleagues, so give one authoritative value to avoid confusion.
+
+### Case Study 30: Canonical Support Forms Reference (Change Email, 2FA Disable, Owner Change, Termination, IPS Tag)
+- **Ticket Reference:** Takeaway 67
+- **Customer Name:** N/A
+- **Customer Email:** N/A
+- **Domain:** N/A
+- **Context:** Rafael supplied the 5 canonical form URLs to stop drafts from using wrong/outdated links: Change Email (https://forms.support.one/form/change-email-form.pdf), Disable Two-Step Verification (https://forms.support.one/form/disable-two-step-verification.pdf), General Owner Change (https://forms.support.one/form/general-owner-change.pdf), Termination (https://forms.support.one/form/termination-form.pdf), IPS Tag Change (https://forms.support.one/form/request-to-change-ips-tag.pdf). KB audit found domain.md referencing a help-center article for termination, an old one.com/en/support/forms/change-email URL, an old one-docs.com disable-2FA link in Case Study 25, and several Change Email / Domain Owner Form mentions with no link at all — all now corrected to the canonical forms.support.one links, with a new section 0 Common Forms reference added at the top of General Procedures. Key lesson: always use the forms.support.one PDF links in customer drafts; never substitute the termination help article or legacy one.com/one-docs form URLs.
+
+### Case Study 31: DNS Correct for Both @ and www to External IP but www Fails SSL (Shared with Hosting)
+- **Ticket Reference:** Takeaway 68 (Shared with Hosting)
+- **Customer Name:** Henrika
+- **Customer Email:** styrelsen@liljeholmsberget.se
+- **Domain:** liljeholmsberget.se, www.liljeholmsberget.se
+- **Context:** Same Takeaway 68 case as Hosting Case Study 29, domain angle. Customer moved site to external IP 54.194.81.69, updating both @ and www A-records at one.com (verified via screenshot). Apex worked over https, www failed with ERR_SSL_PROTOCOL_ERROR after 3-4 hours, ruling out normal propagation since one host already resolved. 1st level confirmed both records pointed correctly, asked for nameserver confirmation and new IP, had customer test incognito/cleared cache and http vs https, and escalated via web escalation form. 2nd level confirmed DNS fine and SSL must be fixed by external provider. Follow-up email reassured customer no further DNS change was needed. Personal follow-up address henrika@liljeholmsberget.se noted alongside account address. Key lessons: (1) apex and www are separate records — always verify both point to the new IP; (2) when apex works but www fails with SSL error, do not re-edit DNS or promise propagation — escalate for confirmation and point to external cert; (3) capture both http and https behavior for apex vs www in the escalation to prove server-side cause.
 
